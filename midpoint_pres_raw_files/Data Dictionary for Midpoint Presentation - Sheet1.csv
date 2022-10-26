@@ -1,16 +1,17 @@
 field ,definition,sample values
-definition,"The quality of the youtube video. HD refers to High Definition, SD refers to standard definition. ","""hd"", ""sd"""
+definition,"The quality of the youtube video. 1 represents a ""High Definition"" or HD video, and 0 represents a ""Standard Definition"" or SD video ","0, 1 "
 total_views ,The total number of views on the video,931220
 total_likes ,The total number of likes on the video ,7862
 avg_daily_views,The average number of daily views on the video ,1924
 total_comments,The total number of commments on the video,0
 publish_date,The date the video was published on YouTube ,04/10/2022
 title,The title of the YouTube video ,"""SHS UCSP Q1 Ep3: Aspects of Culture and Society"""
-tags,"The tags assigned to an existing video, stored as a list of string values or the string 'no tags' if none have been set ","['DepEd', 'DepEd TV', 'Online Learning'] "
 quarter,One of four distinct learning periods comprising 10-12 weeks according to the Department of Education's official definition ,"""Quarter 1"", ""Quarter 4"""
-grade_level ,"One of thirteen distinct grade levels ranging from Kinder to Grade 12, as defined by the Department of Education ","""Kinder"", ""Grade 12"" "
-teacher ,The academic instructor who delivers the learning material in the video,"""levin pabriaga"""
+quarter_numerical,A numerical variable containing the learning period defined in the 'quarter' field.,"1, 4"
+grade_level ,"One of thirteen distinct grade levels ranging from Kinder to Grade 12, as defined by the Department of Education. This was One Hot Encoded to create distinct columns for each individual grade level. ","""Kinder"", ""Grade 12"" "
+teacher ,The academic instructor who delivers the learning material in the video. This was One Hot Encoded to generate additional columns for each unique teacher.,"""levin pabriaga"""
 episode ,The episode number of the series ,"""Episode 01"", ""Episode 05"""
+episode_numerical,"Extracted episode number from the episode column. This field is used for the ""lateness"" analysis involving aggregations","01, 05"
 subject ,"An area of knowledge or study, defined by the Department of Education's standard curriculum ","""holistic development"""
 duration_in_seconds ,The length of the video in seconds ,1621
-tag_type ,The total number of tags applied to the video ,12
+tagstr,"A string containing all the tags of a video typed in an array format. After extracting the unique tags, they were One Hot Encoded ","['Deped', 'DepEd TV', 'holistic education', 'Grade 12'] "
